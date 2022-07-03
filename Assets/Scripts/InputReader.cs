@@ -10,6 +10,7 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     public event Action ShootEvent;
 
     public Vector2 MovementValue { get; private set; }
+    public Vector3 MousePosition { get; private set; }
 
     private Controls controls;
 
@@ -43,6 +44,11 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
         if (!context.performed) { return; }
 
         ShootEvent?.Invoke();
+    }
+
+    public void OnMouse(InputAction.CallbackContext context)
+    {
+
     }
 
 }

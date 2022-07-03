@@ -31,9 +31,6 @@ public class PlayerController : MonoBehaviour
 
     void OnJump()
     {
-        /*Vector3 movement = new Vector3();
-        movement.x = InputReader.MovementValue.x;
-        movement.z = InputReader.MovementValue.y;*/
         rb.AddForce(new Vector3(0, 5, 0), ForceMode.Impulse);
     }
 

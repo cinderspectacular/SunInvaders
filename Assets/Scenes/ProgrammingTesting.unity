@@ -756,6 +756,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1859953162386939957, guid: 6a5098d5fba3dda49b1315de8121bef9,
         type: 3}
+    - target: {fileID: 450497606241762238, guid: 79767578014eb6142a8f7e584fef2f29,
+        type: 3}
+      propertyPath: <aimCamera>k__BackingField
+      value: 
+      objectReference: {fileID: 2027723817}
+    - target: {fileID: 450497606241762238, guid: 79767578014eb6142a8f7e584fef2f29,
+        type: 3}
+      propertyPath: <InputReader>k__BackingField
+      value: 
+      objectReference: {fileID: 1955300437}
     - target: {fileID: 491366085579697241, guid: 79767578014eb6142a8f7e584fef2f29,
         type: 3}
       propertyPath: m_RootOrder
