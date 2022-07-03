@@ -8,6 +8,9 @@ public class PlayerController : MonoBehaviour
     [field: SerializeField] public Rigidbody rb { get; private set; }
 
     public float MovementSpeed;
+    public float JumpSpeed;
+
+    bool isGrounded = false;
 
     void Start()
     {
@@ -24,6 +27,23 @@ public class PlayerController : MonoBehaviour
         transform.Translate(movement * MovementSpeed * Time.deltaTime);
      }
 
+    void OnCollisionStay(Collision other)
+    {
+        if(other.gameObject.tag == "Ground")
+        {
+            isGrounded = true;
+        }
+        else
+        {
+            isGrounded = false;
+        }
+    }
+
+    void OnCollisionExit(Collision other)
+    {
+        isGrounded = false;
+    }
+
     void OnDestroyed()
     {
         InputReader.JumpEvent -= OnJump;
@@ -31,11 +51,9 @@ public class PlayerController : MonoBehaviour
 
     void OnJump()
     {
-        rb.AddForce(new Vector3(0, 5, 0), ForceMode.Impulse);
-    }
-
-    void OnCollisionEnter(Collision collision)
-    {
-        transform.Translate(new Vector3(0, 0, 0));
+        if(isGrounded)
+        {
+            rb.AddForce(new Vector3(0, JumpSpeed, 0), ForceMode.Impulse);
+        }
     }
 }
