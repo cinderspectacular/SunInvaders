@@ -14,6 +14,7 @@ public class PointAndShoot : MonoBehaviour
     public GameObject bulletStart;
 
     public Vector3 mousePos;
+
     
 
     void Start()
@@ -30,7 +31,8 @@ public class PointAndShoot : MonoBehaviour
     {
         mousePos = Mouse.current.position.ReadValue();
         mousePos.z = aimCamera.transform.position.z;
-        Debug.Log(mousePos.x);
+
+        
     }
 
     void OnDestroyed()

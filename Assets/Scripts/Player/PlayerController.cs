@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     [field: SerializeField] public InputReader InputReader { get; private set; }
     [field: SerializeField] public Rigidbody rb { get; private set; }
+    [field: SerializeField] public Animator anim { get; private set; }
 
     public float MovementSpeed;
     public float JumpSpeed;
@@ -23,6 +24,20 @@ public class PlayerController : MonoBehaviour
         movement.x = InputReader.MovementValue.x;
         movement.y = 0f;
         movement.z = InputReader.MovementValue.y;
+
+        if(movement.x > 0 && movement.x > movement.z)
+        {
+            anim.SetFloat("Walking", 1f);
+        } else if(movement.x <= 0 && movement.x < movement.z)
+        {
+            anim.SetFloat("Walking", 0.66667f);
+        } else if(movement.z > 0 && movement.z > movement.x)
+        {
+            anim.SetFloat("Walking", 0f);
+        } else if(movement.z <= 0 && movement.z < movement.x)
+        {
+            anim.SetFloat("Walking", 0.333f);
+        }
 
         transform.Translate(movement * MovementSpeed * Time.deltaTime);
      }

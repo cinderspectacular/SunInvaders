@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 005744cc77ba0d049a4fe8c8c640c805, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -117,6 +117,7 @@ MonoBehaviour:
   <InputReader>k__BackingField: {fileID: 0}
   <rb>k__BackingField: {fileID: 0}
   MovementSpeed: 0
+  JumpSpeed: 0
 --- !u!114 &450497606241762238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,7 +147,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.18125686, y: 0.1791241, z: 0}
+  m_Size: {x: 3.7517624, y: 4.0843515, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &8780553751432218331
 Rigidbody:
@@ -174,7 +175,7 @@ Animator:
   m_GameObject: {fileID: 491366085579697247}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 18ed27693971acf4c852b9ceca1d4d29, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
