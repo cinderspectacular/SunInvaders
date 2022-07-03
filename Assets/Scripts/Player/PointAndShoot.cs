@@ -13,7 +13,6 @@ public class PointAndShoot : MonoBehaviour
     public GameObject bulletPrefab;
     public GameObject bulletStart;
 
-    public float bulletSpeed = 60.0f;
     public Vector3 mousePos;
     
 
@@ -31,7 +30,7 @@ public class PointAndShoot : MonoBehaviour
     {
         mousePos = Mouse.current.position.ReadValue();
         mousePos.z = aimCamera.transform.position.z;
-        Debug.Log(mousePos.y);
+        Debug.Log(mousePos.x);
     }
 
     void OnDestroyed()
@@ -43,25 +42,10 @@ public class PointAndShoot : MonoBehaviour
     {
         //FireBullet();
         mousePos = Mouse.current.position.ReadValue();
-        mousePos.z = player.transform.position.z;
         Vector3 aimDir = (mousePos - bulletStart.transform.position).normalized;
 
         GameObject b = Instantiate(bulletPrefab) as GameObject;
-        b.transform.position = mousePos;
-        b.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
-        b.GetComponent<Rigidbody>().velocity = aimDir * bulletSpeed;
-    }
-
-    /*void FireBullet()
-    {
-        float distance = difference.magnitude;
-        Vector3 direction = difference / distance;
-        direction.Normalize();
-        FireBullet(direction, rotationZ);
-
-        GameObject b = Instantiate(bulletPrefab) as GameObject;
         b.transform.position = bulletStart.transform.position;
-        b.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
-        b.GetComponent<Rigidbody>().velocity = direction * bulletSpeed;
-    }*/
+        b.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+    }
 }
